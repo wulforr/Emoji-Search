@@ -2,7 +2,7 @@ const EmojiList = [
     {
       title: "100",
       symbol: "💯",
-      keywords: "hundred points symbol symbol wow wow win win perfect perfect parties parties"
+      keywords: "hundred points symbol symbol wow wow win win perfect perfect parties parties 100"
     },
     {
       title: "1234",
