@@ -1,28 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import EmojiList from "./EmojiList"
+import ResultField from "./ResultField"
+import Search from "./Search"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+class App extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            filteredEmoji:EmojiList,   
+            SearchField:""
+        }
+        this.HandleOnChange= this.HandleOnChange.bind(this)
 }
 
-export default App;
+HandleOnChange(e){
+    this.setState({ [e.target.name]:e.target.value})
+}
+    
+    render(){
+        let exp = new RegExp(this.state.SearchField,'i');
+        let DataArray=EmojiList.map((data)=>{
+            console.log(exp.test(data.keywords))
+            if(exp.test(data.keywords)){
+            return(
+                <ResultField key={data.title} name={data.title} symbol ={data.symbol}  />
+            )
+            }
+            else{
+                return null
+            }
+            }
+        )
+        return(
+            <div>
+                <Search value={this.state.SearchField} func={this.HandleOnChange} />
+           {DataArray}
+           </div>
+        )
+    }
+}
+
+export default App
