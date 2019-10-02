@@ -1,8 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 .list{
-    border: 2px solid black;
-    margin-bottom: 2px;
-    margin-top: 2px;
+    
+    margin: 10px ;
     padding: 10px;
+    -moz-box-shadow:   3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+     box-shadow:         3px 3px 5px 6px #ccc;
 }
 h1{
     font-size: 50px;
@@ -13,11 +19,20 @@ h1{
     text-align: center;
 }
 input{
-    width: 90%;
+    width: 70%;
     border: 2px solid black;
     border-radius: 8px;
     height: 50px;
     padding: 8px;
     font-size: 30px;
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 7px;
+}
+#heading{
+    padding: 10px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 8px 10px -6px rgb(54, 51, 51);
+	   -moz-box-shadow: 0 8px 10px -6px rgb(59, 58, 58);
+	        box-shadow: 0 8px 10px -6px rgb(54, 54, 54);
 }
