@@ -34,8 +34,11 @@ HandleOnChange(e){
         return(
             <div>
                 <div className="center">
+                    <div>
+
                     <h1>Emoji Search</h1> 
                     <Search value={this.state.SearchField} func={this.HandleOnChange} />
+                    </div>
                 </div>
            {DataArray}
            </div>
